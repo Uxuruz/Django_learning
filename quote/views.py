@@ -2,6 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseNotFound # Importar 
 
 # Create your views here.
+def days_week_int(request, day):
+    pass           
+    return HttpResponse(day)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 
 #Para crear vistas dinamicas 
 def days_week(request , day):
