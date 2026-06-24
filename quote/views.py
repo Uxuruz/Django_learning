@@ -7,7 +7,7 @@ def days_week_int(request, day):
     return HttpResponse(day)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 
 #Para crear vistas dinamicas 
-def days_week(request , day):
+def days_week(request, day):
     quote_text = None
     if day == "monday":
         quote_text = "Hola Lunes :D"
