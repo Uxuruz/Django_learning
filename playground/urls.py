@@ -19,5 +19,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('landings/', include("landing.urls")), # urls de aplicacion landing
     path('quote/', include("quote.urls")) # Traer todo la informacion de quotes 
 ]
