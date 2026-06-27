@@ -3,4 +3,7 @@ from django.http import HttpResponse # Importamos para poder usar httpresponse
 
 # Create your views here.
 def home(request):
-    return render(request, "landing/landing.html")
+    return render(request, "landing/landing.html",{
+        "name": "Dario Castro",
+        "name2": "Elias"
+    })
