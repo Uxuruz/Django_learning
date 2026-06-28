@@ -1,27 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mi primer template en Django</title>
-    {% if name == 'Dario' %}
-      <h1>Hola Dario</h1>
-      <h1>{{ name|title }}</h1>
-      <h2>{{ name2 }}</h2>
-      <p>Fecha: {{ today|date:'d/m/y' }}</p>
-    {% elif name == 'Juan' %}
-      <h1>Hola Juan</h1>
-    {% else %}
-      <h1>Hola invitado</h1>
-    {% endif %}
-  </head>
+{% extends 'base.html' %}
+
+{% block title %}
+  Landing page
+{% endblock %}
+
+{% block content %}
+  {% if name == 'Dario' %}
+    <h1>Hola Dario</h1>
+    <h1>{{ name|title }}</h1>
+    <h2>{{ name2 }}</h2>
+    <p>Fecha: {{ today|date:'d/m/y' }}</p>
+  {% elif name == 'Juan' %}
+    <h1>Hola Juan</h1>
+  {% else %}
+    <h1>Hola invitado</h1>
+  {% endif %}
   <ul>
     {% for tool in stack %}
-         <li><a href=" {% url 'stack' tool.id %} ">{{tool.name}}</a></li>
-    {% empty %}     <!--Se ejecuta si no encuentra nada en el valor compartido el ne lfor--> 
-         <p> No hay tecnologias disponibles</p>
+      <li>
+        <a href=" {% url 'stack' tool.id %} ">{{ tool.name }}</a>
+      </li>
+    {% empty %}
+      <!-- Se ejecuta si no encuentra nada en el valor compartido el ne lfor -->
+      <p>No hay tecnologias disponibles</p>
     {% endfor %}
-  </ul>
-
-  <body></body>
-</html>
+  </ul> 
+{% endblock %}
