@@ -5,7 +5,7 @@ from datetime import date
 def home(request):
     today = date.today()
     return render(request, "landing/landing.html",{
-        "name": "Dario Castro",
+        "name": "Dario-Castro",
         "name2": "Elias",
         "today": today
     })

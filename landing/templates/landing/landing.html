@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Mi primer template en Django</title>
-    <h1>{{name | title }}</h1>
-    <h2>{{name2}}</h2>
-    <p>Fecha: {{today | date:"d/m/y"}}</p>  <!--  Filtro para poder indicar como mostrar  formato de fecha  -->
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi primer template en Django</title>
+    {% if name == 'Dario-Castro' %}
+      <h1>Hola Dario</h1>
+      <h1>{{ name|title }}</h1>
+      <h2>{{ name2 }}</h2>
+      <p>Fecha: {{ today|date:'d/m/y' }}</p>
+    {% elif name == 'Juan' %}
+      <h1>Hola Juan</h1>
+    {% else %}
+      <h1>Hola invitado</h1>
+    {% endif %}
+  </head>
+  <body></body>
 </html>
