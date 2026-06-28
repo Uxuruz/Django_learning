@@ -17,7 +17,7 @@
   </head>
   <ul>
     {% for tool in stack %}
-         <li>{{tool}}</li>
+         <li><a href=" {% url 'stack' tool.id %} ">{{tool.name}}</a></li>
     {% empty %}     <!--Se ejecuta si no encuentra nada en el valor compartido el ne lfor--> 
          <p> No hay tecnologias disponibles</p>
     {% endfor %}
