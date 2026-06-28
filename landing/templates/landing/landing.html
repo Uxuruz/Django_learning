@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mi primer template en Django</title>
-    {% if name == 'Dario-Castro' %}
+    {% if name == 'Dario' %}
       <h1>Hola Dario</h1>
       <h1>{{ name|title }}</h1>
       <h2>{{ name2 }}</h2>
@@ -15,5 +15,13 @@
       <h1>Hola invitado</h1>
     {% endif %}
   </head>
+  <ul>
+    {% for tool in stack %}
+         <li>{{tool}}</li>
+    {% empty %}     <!--Se ejecuta si no encuentra nada en el valor compartido el ne lfor--> 
+         <p> No hay tecnologias disponibles</p>
+    {% endfor %}
+  </ul>
+
   <body></body>
 </html>

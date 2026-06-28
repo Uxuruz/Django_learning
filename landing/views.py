@@ -4,8 +4,10 @@ from datetime import date
 # Create your views here.
 def home(request):
     today = date.today()
+    stack = ["Python","Dart","PHP","flutter","Django"]
     return render(request, "landing/landing.html",{
-        "name": "Dario-Castro",
+        "name": "Dario",
         "name2": "Elias",
-        "today": today
+        "today": today,
+        "stack": stack
     })
