@@ -4,6 +4,6 @@ from . import views
 
 #rutas
 urlpatterns = [
-    path("<int:day>", views.days_week_int),
-    path("<str:day>", views.days_week) # Creando vista dinamcia 
+    path("<int:day>", views.days_week_int, ),
+    path("<str:day>", views.days_week, name="day-quote") # Creando vista dinamcia 
 ]

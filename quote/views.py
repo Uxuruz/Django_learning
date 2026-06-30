@@ -25,7 +25,7 @@ def days_week_int(request, day):
 def days_week(request, day):
     try : #Manejo de errores
         quote_text = days_of_week[day]
-        return HttpResponse(quote_text)
+        return render(request, "quote/quote.html")
     except:
        return HttpResponseNotFound("Day not found")     
     
